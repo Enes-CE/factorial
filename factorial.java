@@ -9,17 +9,22 @@ public class Main {
         System.out.print("Please enter the number you want to get the factorial of : ");
         int number = scanner.nextInt();
 
-        while (number < 0) {
-            System.err.print("The entered number cannot be less than zero. - Please re-enter number : ");
-            number = scanner.nextInt();
+        if (number == 0) {
+            System.out.println("Result : "+factor);
+        } else {
+
+            while (number < 0) {
+                System.err.print("The entered number cannot be less than zero. - Please re-enter number : ");
+                number = scanner.nextInt();
+            }
+
+            while (number > 0) {
+
+                temp *= number * factor;
+                number--;
+
+            }
+            System.out.println("Result : " + temp);
         }
-
-        while (number > 0) {
-
-            temp *= number * factor;
-            number--;
-
-        }
-        System.out.println("Result : " + temp);
     }
 }
